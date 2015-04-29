@@ -1,6 +1,6 @@
 package Annotation::Clustering;
 
-use 5.018002;
+use 5.010;
 use strict;
 use warnings;
 
