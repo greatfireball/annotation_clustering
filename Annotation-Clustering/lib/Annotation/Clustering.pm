@@ -83,6 +83,19 @@ Reference to the original input value
 
 sub generate_cluster
 {
+    my ($hash_ref) = @_;
+
+    # check if all keys are positive integers
+    foreach my $act_key (keys %{$hash_ref})
+    {
+	# the keys must not contain characters others than numbers
+	if ($act_key !~ /^\d+$/)
+	{
+	    # if the contain other characters than number, we need to die
+	    die "Error on key '$act_key'! The keys need to be positive integers containing only numbers!\n";
+	}
+    }
+
     return;
 }
 
