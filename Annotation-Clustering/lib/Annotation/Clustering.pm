@@ -48,8 +48,36 @@ of a clustering algorithm.
 
 =head1 Subroutines
 
+=cut
+
+=pod
+
+=head2 Annotation::Clustering::generate_cluster(hash_ref)
+
+This subroutine does the job. It generates a list of clusters based on
+the key of a hash referenced by hash_ref.
+
+Requirements: A hash reference containing integer keys and any values.
+
+Output: A new hash reference to a hash containing the cluster-names
+    start-position-end-position as keys and a hash reference as value
+    owning the keys:
+
 =over
 
+=item start
+
+Start position of the cluster
+
+=item end
+
+End position of the cluster
+
+=item orig
+
+Reference to the original input value
+
+=back
 
 =cut
 
