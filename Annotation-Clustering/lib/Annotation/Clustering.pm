@@ -6,9 +6,6 @@ use warnings;
 
 our $VERSION = '0.2';
 
-1;
-__END__
-
 =pod
 
 =head1 NAME
@@ -46,6 +43,16 @@ Annotation::Clustering - Perl extension for clustering of annotation information
 I have been asked by Hannes Horn if there is an easy method to cluster
 results of an bacterial genome annotation. This is my implementation
 of a clustering algorithm.
+
+
+=cut
+
+
+1;
+__END__
+
+
+=pod
 
 =head1 SEE ALSO
 
