@@ -18,7 +18,13 @@ my $VAR1 = {
 
 sub generate_cluster
 {
-   my ($hash_ref) = @_;
+   my ($hash_ref, $clustersize) = @_;
+
+   # if no clustersize (second parameter is given, use 6 as default value)
+   if (! defined $clustersize)
+   {
+       $clustersize = 6;
+   }
 
    my $result = $hash_ref;
 
