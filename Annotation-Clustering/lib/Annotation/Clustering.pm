@@ -51,6 +51,10 @@ of a clustering algorithm.
 
 =cut
 
+sub generate_cluster
+{
+    return;
+}
 
 1;
 __END__
