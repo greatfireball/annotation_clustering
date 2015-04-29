@@ -1,0 +1,6 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Annotation-Clustering.t
+lib/Annotation/Clustering.pm
