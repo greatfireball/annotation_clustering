@@ -4,8 +4,6 @@ use 5.010;
 use strict;
 use warnings;
 
-our @ISA = qw();
-
 our $VERSION = '0.2';
 
 sub generate_cluster
