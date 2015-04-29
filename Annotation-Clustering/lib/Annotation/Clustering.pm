@@ -8,6 +8,8 @@ our $VERSION = '0.2';
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Annotation::Clustering - Perl extension for clustering of annotation information
@@ -61,6 +63,19 @@ __END__
 
 
 =pod
+
+=head1 History
+
+=head2 Version v0.1 Perl script implementation
+
+This version solves the problem as Perl script and show the usage of
+the included subroutine
+
+=head2 Version v0.2 Module implementation
+
+This version is a complete new implementation to generate a module
+with the submodule C<Annotate::Clustering::generate_cluster()> which
+can be better tested.
 
 =head1 SEE ALSO
 
