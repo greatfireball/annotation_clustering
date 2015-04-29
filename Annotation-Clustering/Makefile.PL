@@ -7,7 +7,8 @@ WriteMakefile(
     VERSION_FROM      => 'lib/Annotation/Clustering.pm', # finds $VERSION
     PREREQ_PM         => {
 	Test::Pod::Coverage => 0,
-	Test::More          => 0
+	Test::More          => 0,
+	Test::Exception     => 0,
     }, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Annotation/Clustering.pm', # retrieve abstract from module

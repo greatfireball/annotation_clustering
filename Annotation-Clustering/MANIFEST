@@ -2,5 +2,9 @@ Changes
 Makefile.PL
 MANIFEST
 README
-t/Annotation-Clustering.t
 lib/Annotation/Clustering.pm
+t/00_use_Annotation_Clustering.t
+t/01_pod_coverage.t
+t/05_check_sub.t
+t/10_failing_keys.t
+t/10_run_generate_cluster.t
