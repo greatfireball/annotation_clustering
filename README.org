@@ -1,5 +1,7 @@
 ** Build & Coverage
-TODO
+[[https://travis-ci.org/greatfireball/annotation_clustering/][https://travis-ci.org/greatfireball/annotation_clustering.svg?branch=develop]]
+
+[[https://coveralls.io/r/greatfireball/annotation_clustering/][https://coveralls.io/repos/greatfireball/annotation_clustering/badge.svg?branch=develop]]
 
 ** Description
 Basic annotation clustering function for Hannes Horn
