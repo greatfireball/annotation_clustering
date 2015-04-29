@@ -44,6 +44,10 @@ I have been asked by Hannes Horn if there is an easy method to cluster
 results of an bacterial genome annotation. This is my implementation
 of a clustering algorithm.
 
+=head1 Subroutines
+
+=over
+
 
 =cut
 
