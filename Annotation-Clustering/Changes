@@ -1,0 +1,6 @@
+Revision history for Perl extension Annotation::Clustering.
+
+0.2  Wed Apr 29 20:18:34 2015
+	- original version; created by h2xs 1.23 with options
+		-AXc --use-new-tests --skip-exporter --version=0.2 -n Annotation::Clustering
+
