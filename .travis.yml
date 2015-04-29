@@ -4,7 +4,8 @@ install:
     - cpanm --quiet --notest Devel::Cover::Report::Coveralls
 script: 
     - cd Annotation-Clustering
-    - perl Makefile.PL    
+    - perl Makefile.PL
+    - make
     - PERL5OPT=-MDevel::Cover=-coverage,statement,branch,condition,path,subroutine prove -lrsv 
     - cover
 after_success:
