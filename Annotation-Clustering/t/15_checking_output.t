@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 7;
+use Test::More tests => 13;
 BEGIN { use_ok('Annotation::Clustering') };
 
 can_ok('Annotation::Clustering', qw(generate_cluster));
@@ -31,4 +31,6 @@ ok( (keys %{$output})+0 == (keys %{$expected_keys})+0, "The number of output key
 foreach my $expected (keys %{$expected_keys})
 {
     ok( exists $output->{$expected}, "The key '$expected' exists in the output hash");
+    ok( exists $output->{$expected}{start}, "The output for key '$expected' contains a key start");
+    ok( $output->{$expected}{start} == $expected_keys->{$expected}{start}, "The output for key '$expected' contains a key start with correct value");
 }
