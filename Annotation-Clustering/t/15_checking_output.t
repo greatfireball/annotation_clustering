@@ -22,4 +22,4 @@ my @expected_keys = (
 my $output = Annotation::Clustering::generate_cluster($ref_hash_passes);
 
 # first check if the return value is a hash reference
-is(ref($output), "HASH", '');
+is(ref($output), "HASH", 'The output value the subroutine is a hash reference');
