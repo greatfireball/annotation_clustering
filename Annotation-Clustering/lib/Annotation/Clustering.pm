@@ -108,7 +108,7 @@ sub generate_cluster
 	$result->{$new_key} = { 
 	    start => $start,
 	    end   => $end,
-	    orig  => [ $act_key => $hash_ref->{$act_key} ]
+	    orig  => { $act_key => $hash_ref->{$act_key} }
 	    };
     }
 
