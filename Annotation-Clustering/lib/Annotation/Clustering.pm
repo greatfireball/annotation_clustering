@@ -102,7 +102,10 @@ sub generate_cluster
     # add a new key in the result hash
     foreach my $act_key (keys %{$hash_ref})
     {
-	$result->{$act_key}++;
+	my $start = $act_key - 6;
+	my $end = $act_key + 6;
+	my $new_key = join("-", ($start, $end));
+	$result->{$new_key}++;
     }
 
     # finally return the hash reference
