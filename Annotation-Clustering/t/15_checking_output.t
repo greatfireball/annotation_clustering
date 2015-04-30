@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 19;
+use Test::More tests => 20;
 BEGIN { use_ok('Annotation::Clustering') };
 
 can_ok('Annotation::Clustering', qw(generate_cluster));
@@ -36,3 +36,5 @@ foreach my $expected (keys %{$expected_keys})
     ok( exists $output->{$expected}{end}, "The output for key '$expected' contains a key end");
     ok( $output->{$expected}{end} == $expected_keys->{$expected}{end}, "The output for key '$expected' contains a key end with correct value");
 }
+
+is_deeply($output, $expected_keys, "The expected result was generated");
