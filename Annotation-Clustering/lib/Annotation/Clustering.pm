@@ -96,7 +96,11 @@ sub generate_cluster
 	}
     }
 
-    return;
+    # the return value need to be a hash reference
+    my $result = {};
+
+    # finally return the hash reference
+    return $result;
 }
 
 1;
