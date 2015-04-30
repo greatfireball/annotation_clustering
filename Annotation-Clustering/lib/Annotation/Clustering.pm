@@ -106,7 +106,8 @@ sub generate_cluster
 	my $end = $act_key + 6;
 	my $new_key = join("-", ($start, $end));
 	$result->{$new_key} = { 
-	    start => $start
+	    start => $start,
+	    end   => $end,
 	    };
     }
 
