@@ -8,14 +8,14 @@ can_ok('Annotation::Clustering', qw(generate_cluster));
 
 my $ref_hash_passes = {
     1     => \do{    1},
-    8     => \do{    8},
+    18    => \do{   18},
     216   => \do{  216}
 };
 
 my $expected_keys = {
-    "-5-7"    => { start =>  -5, end =>   7, orig => [ 1   => $ref_hash_passes->{1}   ] },
-    "2-14"    => { start =>   2, end =>  14, orig => [ 8   => $ref_hash_passes->{8}   ] },
-    "210-222" => { start => 210, end => 222, orig => [ 216 => $ref_hash_passes->{216} ] }
+    "-5-7"    => { start =>  -5, end =>   7, orig => { 1   => $ref_hash_passes->{1}   } },
+    "12-24"   => { start =>  12, end =>  24, orig => { 18  => $ref_hash_passes->{18}  } },
+    "210-222" => { start => 210, end => 222, orig => { 216 => $ref_hash_passes->{216} } }
     };
 
 # run the subroutine
