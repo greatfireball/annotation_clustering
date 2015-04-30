@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 4;
+use Test::More tests => 7;
 BEGIN { use_ok('Annotation::Clustering') };
 
 can_ok('Annotation::Clustering', qw(generate_cluster));
@@ -26,3 +26,9 @@ is(ref($output), "HASH", 'The output value the subroutine is a hash reference');
 
 # check if the return hash has exactly the number of expected elements
 ok( keys %{$output} == @expected_keys, "The number of output keys is equal to the expected number of keys");
+
+# and check if each expected hash key exists
+foreach my $expected (@expected_keys)
+{
+    ok( exists $output->{$expected}, "The key '$expected' exists in the output hash");
+}
