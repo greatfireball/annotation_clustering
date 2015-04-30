@@ -99,6 +99,12 @@ sub generate_cluster
     # the return value need to be a hash reference
     my $result = {};
 
+    # add a new key in the result hash
+    foreach my $act_key (keys %{$hash_ref})
+    {
+	$result->{$act_key}++;
+    }
+
     # finally return the hash reference
     return $result;
 }
