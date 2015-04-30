@@ -99,17 +99,45 @@ sub generate_cluster
     # the return value need to be a hash reference
     my $result = {};
 
-    # add a new key in the result hash
-    foreach my $act_key (keys %{$hash_ref})
+    # I need a temporary array for sorting
+    my @sorting = ();
+
+    foreach my $act_key (sort {$a <=> $b} keys %{$hash_ref})
     {
 	my $start = $act_key - 6;
 	my $end = $act_key + 6;
-	my $new_key = join("-", ($start, $end));
-	$result->{$new_key} = { 
-	    start => $start,
-	    end   => $end,
-	    orig  => { $act_key => $hash_ref->{$act_key} }
-	    };
+
+	# check if the last entry in @sorting is overlapping
+	if (@sorting && $sorting[-1]{end} >= $start)
+	{
+	    # we have a overlap, therefore extend the end to the new
+	    # value and push the current key to the orig list
+	    $sorting[-1]{end} = $end;
+	    push(@{$sorting[-1]{orig}}, $act_key);
+	} else {
+	    # no overlaps found, therefore create a new entry
+	    push(@sorting, {
+		start => $start,
+		end   => $end,
+		orig  => [$act_key]
+		 });
+	}
+    }
+
+    # here we have the final sorted list, now generate the result hash
+    foreach my $act_entry (@sorting)
+    {
+	my $key = join("-", ($act_entry->{start}, $act_entry->{end}));
+	$result->{$key} = {
+	    start => $act_entry->{start},
+	    end   => $act_entry->{end},
+	    orig  => {}
+	};
+
+	foreach my $act_key (@{$act_entry->{orig}})
+	{
+	    $result->{$key}{orig}{$act_key} = $hash_ref->{$act_key};
+	}
     }
 
     # finally return the hash reference
